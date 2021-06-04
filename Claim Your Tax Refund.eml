@@ -1,0 +1,170 @@
+Delivered-To: whizstudent@whizteen.com
+Received: by 2002:a25:a308:0:0:0:0:0 with SMTP id d8csp1042615ybi;
+        Fri, 4 Jun 2021 01:25:45 -0700 (PDT)
+X-Received: by 2002:a17:902:f24c:b029:10e:7d70:aadc with SMTP id j12-20020a170902f24cb029010e7d70aadcmr3180774plc.74.1622795144801;
+        Fri, 04 Jun 2021 01:25:44 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxXedosz7uBcEZ5tOWCqKxY1LGqS629Oqe2/OghLiP6Hv25GUziAsrCI8PkylTUYOaLtGcE
+X-Received: by 2002:a17:902:f24c:b029:10e:7d70:aadc with SMTP id j12-20020a170902f24cb029010e7d70aadcmr3180726plc.74.1622795143869;
+        Fri, 04 Jun 2021 01:25:43 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1622795143; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=WiiJYxvWb3vRnbwfW8vWels136qTt/NvdQqv1GEUKiobc+X1r6UwqIgapfqwqDJl5r
+         33TOBqAEag+tqltkulgPQ5OIbg5saTakw380JI8ljWJ81vb9jJESbw7xX1xWBS8q0ZWx
+         4JA6RvUiQFkAP5qY//D1IsJuX6YY14jRt1KTHdd2vjj7OVFfs4hScGJd1GjhI0hPDHgr
+         HH1SOgSsi9Myw8vGL6KgZ85Lpf2bWtXqgVxcFmLzEu2Pc1XljO2agUAbfNINZODT+XW9
+         4mPZLJPFfrBLLaiJNqmRGuUPuH5tkPD1jM5+gAGRxRlmXAfw99JMLTX8tEaqa6ghrNt8
+         6y6A==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=WUtik54FE3FEdCNuG1mzoTa+XJXiuQ4roClxI7AUA5k=;
+        b=p6PLAPB6EI6p4JTxbtu6mHyH12/zyd5LoYObG0uLxRnK8qcT6MX+pYWvnCCRzVhoPi
+         yjbUDHuyN4cfDREpt7xg0MVnB0OeNBicfNmkP2/Zyv9T+4cSAbjKTyNtkHGc7Ru9rsRD
+         kahCPSigExjQpqn6M41OF9EVhXCSD+dGkmbY674HXB3mUyN4cT068fU3esINiX8WC5uh
+         I0ZIyyFSH5m1LZqvGifZD2P1VpOG/Ny/CfMVjyQBTK0E13GSQuIGFTEQPhwlIL82nx5Y
+         cHZ7XaIzXo1pgwz+D1rXD0irQX6YpSKxqE0h5BLYNHycMKB8C1zjvA950TZQsbjpKkCt
+         xHfg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@outlook.com header.s=selector1 header.b=syRSHsHv;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of batman@stimmwissenschaften.de designates 40.92.254.102 as permitted sender) smtp.mailfrom=batman@stimmwissenschaften.de;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=outlook.com
+Return-Path: <batman@stimmwissenschaften.de>
+Received: from APC01-PU1-obe.outbound.protection.outlook.com (mail-oln040092254102.outbound.protection.outlook.com. [40.92.254.102])
+        by mx.google.com with ESMTPS id v2si6053941plp.192.2021.06.04.01.25.43
+        for <whizstudent@whizteen.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 04 Jun 2021 01:25:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of batman@stimmwissenschaften.de designates 40.92.254.102 as permitted sender) client-ip=40.92.254.102;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@outlook.com header.s=selector1 header.b=syRSHsHv;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of batman@stimmwissenschaften.de designates 40.92.254.102 as permitted sender) smtp.mailfrom=batman@stimmwissenschaften.de;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=outlook.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=TjX6hS+CLjMqGg/S2/Xt1M1watqyMU08V0ew+dm0yddbgCjyGuIzcnd9UhLTCbTADNTLfCTbrKGrYvy2JLSY9jTgjzAJ0fdlMLdBhiXqCLeC74jiNBahoSVZtmudZJf6iWaW3QkCBrzgxT6m/glMYYiILkDqMMVZ2J3w33d9tVtewHbQRYnqGkvUOiZeE0oBqSX3RsGS8NcZBY2Q89vLsf7iga3cAvQ+e+DjAxn0mHH4ylw0qyF+9rXdOxMFLM7cI77od4kdNNtXJsBpNH7sotyo4OLG8SC2EU2fauJtFfY8LnWwNWWFpmh+LMTZZ0RhWs4mQ1ML+7qOH1jZzGilqQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=WUtik54FE3FEdCNuG1mzoTa+XJXiuQ4roClxI7AUA5k=;
+ b=lK5hBteZZkGuIEGCFS+tGxbT0mVEQ1gcbiPl1xZgrSz6pzVo1j7+r4WMCEkGmwMgsUJxJzs3WgDTgCSqclhaLg5z7ghDsk0jXL8mwo+9F+yG0rgMsFkBFYy6Le4H9SFGfSZV/4B6cU7tz/XwFBHVgku38mGaN2LHiUs2y7d8w3EA5kn9VUdOCEKloDXcJ2rvich0cIGnNcENFEp3mh1J9RQxm+iPIoYWnSlT95aGewWOfbK0OxJR6M2OVt8WOAp8BgkDbd0/Qq2MIH1HOviDmaXYc46oU+wnY528oAF2S+R5Rb4QzvG0oiIwOT/y8kbGN11yDRiR8U0e0XmLdNC1rw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=WUtik54FE3FEdCNuG1mzoTa+XJXiuQ4roClxI7AUA5k=;
+ b=syRSHsHvddxOHW+yVK7A0xr6TrW/G61JUth/QartDm3eyrzZyY5drxPdpipKr7CULdU+fCd2yMqg+1+CtLyGk2kPXGCahnoxe1uz8RicUDDiv8bvaij+nq6CFmGrlIV0H9ahQpwigH+qK/QGzDdU3qv+WhIAOz9fXAtyHYld4mHMUbuVDkREf6/cfBRR/HDypNyTbw2TKc9d5Cnq3Wzu+LktxF0OjYR7QMEJjokhFV2PK6+Cxq4bpdGTilXYypLt96dBzdreiphFauLVhm0qsOgFsK1Vpi967CczMeHIXjFk3Yne3qBQWXCl+R16IUaIIW+MZA1WzGSvrsfZMF5UuA==
+Received: from KL1PR0601MB4132.apcprd06.prod.outlook.com (2603:1096:820:2c::8)
+ by KL1PR0601MB4292.apcprd06.prod.outlook.com (2603:1096:820:66::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4195.20; Fri, 4 Jun
+ 2021 08:25:41 +0000
+Received: from KL1PR0601MB4132.apcprd06.prod.outlook.com
+ ([fe80::c17f:8685:4146:9253]) by KL1PR0601MB4132.apcprd06.prod.outlook.com
+ ([fe80::c17f:8685:4146:9253%5]) with mapi id 15.20.4195.024; Fri, 4 Jun 2021
+ 08:25:41 +0000
+From: Whiz Teen <batman@stimmwissenschaften.de>
+To: Whiz Teen <whizstudent@whizteen.com>
+Subject: Claim Your Tax Refund
+Thread-Topic: Claim Your Tax Refund
+Thread-Index: AQHXWRs0NEGNvC8a/0ScfPjeHfRN/A==
+Date: Fri, 4 Jun 2021 08:25:41 +0000
+Message-ID:
+ <KL1PR0601MB413232161BFFE560A6989F46CF3B9@KL1PR0601MB4132.apcprd06.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-tmn: [zc33dg+NTg7sIuK5q0CKZdq61dK3GMic]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7b8b50db-cc8f-4f7d-8667-08d927325756
+x-ms-traffictypediagnostic: KL1PR0601MB4292:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ /HayaaO4buhWDnkmj5HV+8fl2xGycjy8T2UM+0tDoGDn4RYlIy/Lxz/T3KnLhxz/xz7GZp0lRogAcsaWSKndouTnqNFK9DOQeqrTtcxd9UTJ8bWgkYDniS5Swv9bN2I5EqXlcvYHkioPTY/DwngKP01DjXodrAa1v4HLRuWh6Z6b649ZVQGOrMkKo2L0g2UrHRk5CzxA8lHHMikGUDy4YIMwYasNZW2ucU5dBCcXOrcIFKIcyYTB+IFCiS9ctmflx9EJhhDwBQHmshQFXg0gnSwtfgnY2tDsZuC3J1mw0SHxReArE1NM9CfQ81joQ++8JLbhsl4iJ/PQ7I2AdD0iK8YXVSv3lcL3QVsz++g2JxZdQF51NhuMXQcrfhEDTFafFy2zyZqAj1Jt3GRnJD49+lWiZ3F3GWgz/WiOBdk2LTdw4kaD0zAy/+VWhlAq13odjaOObOObWzIsYqAJj4xTWA==
+x-ms-exchange-antispam-messagedata:
+ E60C0ZDQJFsXqmL4SoXA66yiXT5XzFbMUes09Wu5J0X/F+QKkdUQWIkGaFgf6llAc8Ze2XTR3glCxSAFGDHsPXLcPkzDcNNkEaTQYpy0XV6v7UYDPTY7T8Q6NcStNfgtektQ3/30dB0XA7wK1iLbEw==
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/alternative;
+	boundary="_000_KL1PR0601MB413232161BFFE560A6989F46CF3B9KL1PR0601MB4132_"
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KL1PR0601MB4132.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7b8b50db-cc8f-4f7d-8667-08d927325756
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jun 2021 08:25:41.6523
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR0601MB4292
+
+--_000_KL1PR0601MB413232161BFFE560A6989F46CF3B9KL1PR0601MB4132_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Dear User,
+
+We identified an error in the calculation of your tax from the last payment=
+, amounting to $500.15. In order for us to return the excess payment, you n=
+eed to create an eRefund account after which the funds will be credited to =
+your specified bank account.
+
+To reduce the overhead we have an application that you can download that wi=
+ll automatically do everything for you.
+
+Click here<https://bit.ly/3gb0QXF> to download the application.
+
+--_000_KL1PR0601MB413232161BFFE560A6989F46CF3B9KL1PR0601MB4132_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<span style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-ser=
+if;font-size:small;background-color:rgb(255, 255, 255);display:inline !impo=
+rtant">Dear User,</span>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+We identified an error in the calculation of your tax from the last payment=
+, amounting to $500.15. In order for us to return the excess payment, you n=
+eed to create an eRefund account after which the funds will be credited to =
+your specified bank account.&nbsp;</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+To reduce the overhead we have an application that you can download that wi=
+ll automatically do everything for you.</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<span style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-ser=
+if;font-size:small;background-color:rgb(255, 255, 255)">Click<span>&nbsp;</=
+span><a href=3D"https://bit.ly/3gb0QXF" target=3D"_blank" data-saferedirect=
+url=3D"https://www.google.com/url?q=3Dhttps://bit.ly/3gb0QXF&amp;source=3Dg=
+mail&amp;ust=3D1622872894725000&amp;usg=3DAFQjCNFgMw7ipFsMCwxYydTo1MJ9TLvHo=
+Q" style=3D"color:rgb(17, 85, 204)">here</a><span>&nbsp;</span>to
+ download the application.</span><br>
+</div>
+</body>
+</html>
+
+--_000_KL1PR0601MB413232161BFFE560A6989F46CF3B9KL1PR0601MB4132_--

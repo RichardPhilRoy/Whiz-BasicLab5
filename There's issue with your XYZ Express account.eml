@@ -1,0 +1,202 @@
+Delivered-To: whizstudent@whizteen.com
+Received: by 2002:a25:a308:0:0:0:0:0 with SMTP id d8csp1044205ybi;
+        Fri, 4 Jun 2021 01:28:46 -0700 (PDT)
+X-Received: by 2002:a17:902:a50b:b029:f7:820f:fd1c with SMTP id s11-20020a170902a50bb02900f7820ffd1cmr3258117plq.69.1622795085121;
+        Fri, 04 Jun 2021 01:24:45 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyMJ2JYe4twnLo/k/eJP7zalXFydiqSHZudSsr/ysA1Z1z5f12gZnpeFRev5g+jqlAMYOCe
+X-Received: by 2002:a17:902:a50b:b029:f7:820f:fd1c with SMTP id s11-20020a170902a50bb02900f7820ffd1cmr3258067plq.69.1622795084249;
+        Fri, 04 Jun 2021 01:24:44 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1622795084; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=Ae0lpdLS+o7uliY4jMYmkvHtp7b5+NdeKrmxPKXez4s8MwAq9euzVamyWlhkA8g1IA
+         fbQ6s6ftRls1MhTT1gQscgVNuQ+s7hLL1zCVp0KDFMda3/L7xZ9JDBHk8/C8t1vBq25p
+         GT/iclykewUT2yRMJAprvNko8iuownSd8xBRpc/30YMeA4yi50l9Ugaj1EJfri0KDDvl
+         PSFYNs2wMDATm+ahuKag1dBXwN3bDrQY3wAAzwjNa0gwdoNoLEHUGEP6EF0kfAsJbezs
+         IdAHmZQcyv26cnDu7WPBu1+96WoJYAGgc26RRdp5LQkLArigrgL85V7fHzdPSmNOI0Pj
+         g7Fw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=lOUQsAuvndSfxdcooo9z/texuCMLgHUAW63OpE8sMBw=;
+        b=B6cLOoIG1jE+ad9lIrd2aAyC/cOhqjKZPxEg4vVI+tlh8fGfqCBeEky40eSI6p5wxh
+         05pnr6ORH941HcHga7gjARtbvpk52m2fQsdiYSv7lUlz5NT5wFrbjKBHC7aBbC22ZG4k
+         pfiXdRas7A3Y5gismAQ/iiSm08GNvP3TxjIuDlxi9VBHmo7WU79mJb6dnE5PitkYgduo
+         mP2wSddC6DThxBaBhCvTc1/LhKlkMKAEllUgC1nKrKuYR+ZmMMBIdRa8oFWd96y7VLiG
+         nPUHx1I9OXqdPI71NhaJJvbji2hY6F0SeIYAUOk2HS5dgjf00lA81PnKo51iM9RvNkCd
+         LPaA==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@outlook.com header.s=selector1 header.b=ZdE7Ep5i;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of 184@carioca.net designates 40.92.253.87 as permitted sender) smtp.mailfrom=184@carioca.net;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=outlook.com
+Return-Path: <184@carioca.net>
+Received: from APC01-SG2-obe.outbound.protection.outlook.com (mail-oln040092253087.outbound.protection.outlook.com. [40.92.253.87])
+        by mx.google.com with ESMTPS id a2si1989925pff.97.2021.06.04.01.24.43
+        for <whizstudent@whizteen.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 04 Jun 2021 01:24:44 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 184@carioca.net designates 40.92.253.87 as permitted sender) client-ip=40.92.253.87;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@outlook.com header.s=selector1 header.b=ZdE7Ep5i;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of 184@carioca.net designates 40.92.253.87 as permitted sender) smtp.mailfrom=184@carioca.net;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=outlook.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=A2FGCEpzfrXTzlxuoSI8iPI8o+1hC57tVFiXitJyXDnU7EN+nqMnlFs03OFwr0o5orU81cEc0jhSht7VlInbXVlwL+Ozg85fSevq84uC6DUm5B6/t19maPTTwEt3bPTkO77cOVF4a9KCiaPcIghSpzGvy/wOp2GiP/RBfmWdItg8cfT88LWpAyczyn87z+BVONoVdHznr/3N1U/LV75bbIyzGAIe7a0HghKyeDgsbbWNwBZhcq9AZq/9wqzVw5F7HT6+5QHCRlQsSGo4ZpMT9m/ANQUcNXP3yomftCUnG7m5+3Kuz0i7pOZD1zFB6Xq1+5589mf63oGs1ctpAbSA1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lOUQsAuvndSfxdcooo9z/texuCMLgHUAW63OpE8sMBw=;
+ b=YJON1f3zfApbkAVki+PAjptCxGkTa1jXbWdy/mHAtrXVT3qtxhp7h3DHMpVrdpW4KxDe/rzMBxbMNLDp2LB9lbWVfeRwWA5u3brAIC6EKNKLEzqxITC0UT49h6yyB861toAXqIIvcOnxXNpmWoi4dd3dYJSQk2ZysDojwwGj4xM7OX5gCaeLqRA6M+2fZxHKlgy76Uusibbz5Bbw1KvCspKb4Z6rHLHb3LRkfaro5u0iygDi7os1sAIpY8ypD8QVyunbI/vep20+zXa+jGgFqyk/52IB6t00kbo7XD0MMt41Sg040IuLowDCN4ZFTlwdRU8DhY1B+/oWTDpSF0ehGQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lOUQsAuvndSfxdcooo9z/texuCMLgHUAW63OpE8sMBw=;
+ b=ZdE7Ep5iXNjWzbs3GOIX4N+KXKC1DjHihheR4ffYvO+2Vbsc6kiNJKEFwS5nmAYmBkojdnJOMiYrLIqFnEUqHpmIa9gwhS8Pj6xYgu3LkVHSiijRqb9sB4ZcYWTSJrMunGPqfAvPgKnc7vGD7kXDukrXDZ0iI1e9Q9eVDpdDPQ+IJ4aThg8J09eug3iBZOcYzKg8wkw7F58afi/EQF/BIDegvjdS1exj6NZBte72AZyDvspdgoDAGxxRb5rBs3NMUT9xZiNakX7lBsPMVI5NNjLtmTdRVkfQtaccZ3eNL2dDEP2SY2BmUPIl+Raj/EEgVoSOkEIDv+oZzBWKgwUiQg==
+Received: from KL1PR0601MB4132.apcprd06.prod.outlook.com (2603:1096:820:2c::8)
+ by KL1PR0601MB3832.apcprd06.prod.outlook.com (2603:1096:820:1a::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4195.24; Fri, 4 Jun
+ 2021 08:24:42 +0000
+Received: from KL1PR0601MB4132.apcprd06.prod.outlook.com
+ ([fe80::c17f:8685:4146:9253]) by KL1PR0601MB4132.apcprd06.prod.outlook.com
+ ([fe80::c17f:8685:4146:9253%5]) with mapi id 15.20.4195.024; Fri, 4 Jun 2021
+ 08:24:42 +0000
+From: Whiz Teen <184@carioca.net>
+To: Whiz Teen <whizstudent@whizteen.com>
+Subject: There's issue with your XYZ Express account
+Thread-Topic: There's issue with your XYZ Express account
+Thread-Index: AQHXWRsR97uW/qB2D0mE3q6HqK0w6g==
+Date: Fri, 4 Jun 2021 08:24:42 +0000
+Message-ID:
+ <KL1PR0601MB413217F8EA7302A14D9FD060CF3B9@KL1PR0601MB4132.apcprd06.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-tmn: [5dVw5H6se69I9BtG8R840HhsFW2t4awV]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 79f595be-4b34-4199-15d0-08d927323423
+x-ms-traffictypediagnostic: KL1PR0601MB3832:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ h/4ASxCNr7UusPrDxZnGZfACGWo/w+5nF1NxMxgYpg5cahEbnDO8Gkh2I2sajS4dv+nDYrVSbcytGij0b+L+tqpS9An7eGPDq2t7pUdlWxGitX22rthRs3zIlKn8x4rQ8U/RVTvRU1B4BaJnZ/qSYEfgKZmY2W7LFKxB8nzkIP7gjUACOnK6LPz5A5qnuE2wREmWbQiJbnYT6kSbAEeCaO0lqie0rle1nJmmEppzF+pij1GTYBXSvTLMIjGiaJTVnv+Qs4KLvuCrF44RT0dmuPU7Ht1qwUVgfPg0jeY6xzsFcQCG705mpEBmGG1ubJRAptnPW+SXVrAXnMEeX4o6jKjMCHqKuSqb4jGGmXiXsVY0sYeH2YT1j8S+K5voz8K4tV83jWH6wET2GNKq5QYPV0OnQ6R5eajwxBvLoSpZkUM=
+x-ms-exchange-antispam-messagedata:
+ iiTPwd+H36dl2lRXFXQomuaHyGR0/u3M/EolsXAKkyeEqRhQSGeCMIQpQ9AVnO5YaUOGEZH2Ui9cyJx5ipu+wavE37HELnQGvXJ0cvQO8S1DA9oOEQkEeM9tHVXeNb/WPmsOqOM5T19mWS6KzbS/bg==
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/alternative;
+	boundary="_000_KL1PR0601MB413217F8EA7302A14D9FD060CF3B9KL1PR0601MB4132_"
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KL1PR0601MB4132.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 79f595be-4b34-4199-15d0-08d927323423
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jun 2021 08:24:42.4943
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR0601MB3832
+
+--_000_KL1PR0601MB413217F8EA7302A14D9FD060CF3B9KL1PR0601MB4132_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Review your information.
+
+Due to recent activities on your account, we placed a temporary suspension =
+until you verify your account. You need to review your information with us =
+now on 4/6/2021 10:13:38 AM.
+
+To continue using our American Express Online service, we advise you to upd=
+ate the information about your account ownership.
+
+Click here<https://phishingpage.ucraft.site/> to review your account.
+
+For the security of your account, we advise not to notify your account pass=
+word to anyone. If you have problems updating your account, please visit XY=
+Z Express Support.
+
+
+Sincerely,
+XYZ Express Company. All rights reserved
+
+
+--_000_KL1PR0601MB413217F8EA7302A14D9FD060CF3B9KL1PR0601MB4132_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<b style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-serif;=
+font-size:small;background-color:rgb(255, 255, 255)">Review your informatio=
+n.</b>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b><br>
+</b></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+Due to recent activities on your account, we placed a temporary suspension =
+until you verify your account. You need to review your information with us =
+now on 4/6/2021 10:13:38 AM.</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+To continue using our American Express Online service, we advise you to upd=
+ate the information about your account ownership.</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+Click<span>&nbsp;</span><a href=3D"https://phishingpage.ucraft.site/" targe=
+t=3D"_blank" data-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps:/=
+/phishingpage.ucraft.site/&amp;source=3Dgmail&amp;ust=3D1622868447274000&am=
+p;usg=3DAFQjCNFor4beDAx0CEr4dcaQgbgGgefKCg" style=3D"color:rgb(17, 85, 204)=
+">here</a><span>&nbsp;</span>to
+ review your account.</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+For the security of your&nbsp;account, we advise not to notify your account=
+&nbsp;password to anyone. If you have problems updating your account, pleas=
+e visit XYZ Express Support.</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b>Sincerely,</b></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b>XYZ Express Company. All rights reserved</b></div>
+<br>
+</div>
+</body>
+</html>
+
+--_000_KL1PR0601MB413217F8EA7302A14D9FD060CF3B9KL1PR0601MB4132_--

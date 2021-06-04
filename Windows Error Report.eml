@@ -1,0 +1,214 @@
+Delivered-To: whizstudent@whizteen.com
+Received: by 2002:a25:a308:0:0:0:0:0 with SMTP id d8csp1044489ybi;
+        Fri, 4 Jun 2021 01:29:24 -0700 (PDT)
+X-Received: by 2002:a63:4915:: with SMTP id w21mr3802160pga.363.1622795123606;
+        Fri, 04 Jun 2021 01:25:23 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJw4qQ7EyPq6C3Zg1LygjcUM2TKT/dsVGr6PF1N0W67FBexN4MOYCy491bKIikbh/Q57GM+N
+X-Received: by 2002:a63:4915:: with SMTP id w21mr3802118pga.363.1622795122795;
+        Fri, 04 Jun 2021 01:25:22 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1622795122; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=vfYaPQef+WYfV6GMlu/wsI5aiutbuq1BVm34WHgUuIuI0hFvkNlD0LReZJ4VenoHe9
+         cOdkKe72PgI0jjIS7bj+iWAbikjw6IEHctjtcIDxFJx+dDmpOBnZLeKxnobKDDwMQGDe
+         Q8SFy7J2CYIRZ7aUMpvmOsy4HJ4f4Uaq/AHbXV3P3De6eWrDjv91MaDDwQNGQSrHrrx3
+         ynC+TLd8rbJg25NCn92zxtezgOHqbmQ2SNqdkGn3ezFp6lYwiHQdH81AzfphB4yuMiiD
+         1NmL0fszQUMQO5mUh1qex1brlMFo9tr1k75TOs+NwftDJFbdZEkyIbQtxFEd1LjkOiQn
+         lsVQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=USezTRMtsMq4DJN2FUdnh+rM5IeWYbbsepDl56Y7LeQ=;
+        b=l3YPOqM49xU72bKOkSXxNfyXSxSx6iFXUF7H/7UBxwLDdXRC735hPfYyfZP1N4HHHn
+         jE5F7yxw2IvFQSG0Z7ZrF7O7rARrv1I0I92RO0W8Ju/o46exdn9pKkQ9fd6EKGeukwBx
+         ZXVLvcR8deEPzCfLRpJPu9XYDZ+v8UQnDpJ+t8tilyrVP849GDpM/U4A5LsRZnkBPWUj
+         RkP/rlGGHvqNlTh7XyIJrqRQ+pVowvX/05PrkJnQcDehiaC9UXvFRuE9yJAv0EpndjD7
+         jc4JGTFu0LO9db2dZ5UnztFgDzrwJrQ4iD5ddJutR7/4Un4FBPxhz1zaa9PYKYnZ8gx/
+         OUaQ==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@outlook.com header.s=selector1 header.b=qbAxoDnN;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of max@eastsideautosalvage.com designates 40.92.254.10 as permitted sender) smtp.mailfrom=max@eastsideautosalvage.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=outlook.com
+Return-Path: <max@eastsideautosalvage.com>
+Received: from APC01-PU1-obe.outbound.protection.outlook.com (mail-oln040092254010.outbound.protection.outlook.com. [40.92.254.10])
+        by mx.google.com with ESMTPS id k5si1819301pgl.129.2021.06.04.01.25.22
+        for <whizstudent@whizteen.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 04 Jun 2021 01:25:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of max@eastsideautosalvage.com designates 40.92.254.10 as permitted sender) client-ip=40.92.254.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@outlook.com header.s=selector1 header.b=qbAxoDnN;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of max@eastsideautosalvage.com designates 40.92.254.10 as permitted sender) smtp.mailfrom=max@eastsideautosalvage.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=outlook.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RzzMQNJZuDYWr9ttHQNt1i8mSHB4xlZG+x9pFsT/rSIQOwLN1UR5evazG9dwZQzaMyjhJrpmufVjs0otp2TyZ1kKAtmb/ldMWwOd0Yj0C50owT+xrlBQfB1hZszepw3PX9T7OloZhBt/KEhWUNmgha96eoBN+Lr4lk2OWJaUXHvXxGUHAKrQ0TdmNfyOJZg2OGaLDMXRY/ym0pi3Sr/3lHpgKWdJOtU6GAlLovjfKPs70Ov/IYbX7XiJTDC4Pr8D/3SKXhzlc/ABmcPEDnOA6NFJ7oJfqKb+OV26wVwPL4gzHH2z7SyTq+tW+aRcwIbB9mPDtCRBH1btZdX9eiJRPg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=USezTRMtsMq4DJN2FUdnh+rM5IeWYbbsepDl56Y7LeQ=;
+ b=NrhhAHRoZ4REoWpV8rBMHOln/SOfE4wUVVZ0pKlBDWVFLQ4RozD6LUizcdGwTrWESWSfCsD6CpWdQGfWPfJeplziAn/ynHSWGccQ4qVdVkPxTOpoDmpILPiIYOmWLWA/AHiYXXIrgFabwcaDbjhiHxJC6oPGZQJ7mzTmZ22ng+swwUDDez4nsj+nEjKSEpIduJXuentQ3OPpwfuqwqST/weypNWc0+QQZW4hmNS852n4Q07CqOsDj9Mx7qUUdik5qJ8Gv65F8SVjiIcq+JUOa4/JSSP16ymtL1E4n5cd7LNOHI7+ucnOqyer7ddYv2jKetLcBcsZecNNuquaTDh3vg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=USezTRMtsMq4DJN2FUdnh+rM5IeWYbbsepDl56Y7LeQ=;
+ b=qbAxoDnNrgkkAewWefZjg5HNPRVuPe/x2Iy1lDymaH/TLXBbzR+BXKWia+/fLoOa/XAR/1/LZsNEMBZfWayyjJcBa+RLn9hV8opMnzaWTdNLMtq3GM8U5rxI06IW6LVSevQmYm4bMIbACt89wG+vV9B2pSqGxzYwcARz7JPJDpULZpZCPBPc3DsF9pQ0RBfDan30T557u7IvJ3KIKIq93QPGxHaFFEfT5BnQjc0aILeEw3zWWhYNMX5UkxjsF6cQufv04kT79XLCsASxwjlfRRYUwbwJj70MEMXULhEbR6U+ox1AgiregOefVz569MKJ90Bo0oDN7zWkEa1x2gAnug==
+Received: from KL1PR0601MB4132.apcprd06.prod.outlook.com (2603:1096:820:2c::8)
+ by KL1PR0601MB4417.apcprd06.prod.outlook.com (2603:1096:820:7b::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4195.22; Fri, 4 Jun
+ 2021 08:25:20 +0000
+Received: from KL1PR0601MB4132.apcprd06.prod.outlook.com
+ ([fe80::c17f:8685:4146:9253]) by KL1PR0601MB4132.apcprd06.prod.outlook.com
+ ([fe80::c17f:8685:4146:9253%5]) with mapi id 15.20.4195.024; Fri, 4 Jun 2021
+ 08:25:20 +0000
+From: Whiz Teen <max@eastsideautosalvage.com>
+To: Whiz Teen <whizstudent@whizteen.com>
+Subject: Windows Error Report
+Thread-Topic: Windows Error Report
+Thread-Index: AQHXWRsiRSgHyVv3AEalVgzjZs1lXg==
+Date: Fri, 4 Jun 2021 08:25:20 +0000
+Message-ID:
+ <KL1PR0601MB4132274E3179FD312297CC74CF3B9@KL1PR0601MB4132.apcprd06.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-tmn: [J2gwRu2mLgLYkZGzbo4cZagXnN2bnMnT]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 923c3773-be97-4b28-9288-08d927324ae1
+x-ms-traffictypediagnostic: KL1PR0601MB4417:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ QiaL3Afq8gyBUc3nNQK3CCdzpyeC+ofbRIRGVoOHBfz52l7bhJ4Uz7a8cfBQFYXfbIKFM2BEnYKRm6bYfGTeEHud2qKaL60JzPRwySQb/hqV8P5unDsbU/N6YtQkIGBEtuet8Kjg63qOj/MGi2wuuQx9Tor65NVOVPqVyoz/DtFEBur30JUDxKsBqYGtobG09g+Rc0wqSTvbvc/CQdZSr8qE4d4CPPUFMOXSIIvuGpxo3k7eI2fszcLolT26bGcYRI8+avW5kQIubebv8gwP3bBPsXk88/7ywhlDg+zj/g+85lbe4I3Gh9A3Rf8C5OERgRRDVYxSS9W42xmAHq3ez8YRKIQGBOwSEqtScRPbOklocrDRJf1HMR5MzBw+fpvkf+0ijYWQaqCW3KKcv7z4omLfydtfHi1+0Ej+efrYY6OeHlIG/2jPMrRbXxt9obT8T4+tX1q3TLDQl3z8L4VN0iJZ08dRiAQqOTsVOIgWSpA=
+x-ms-exchange-antispam-messagedata:
+ h7ZAFhfrNbPU1F+c7kdfpz0Am8/jZ6JIrrJzseClT4jz4egclJ/TmelmFEW3AFhmuiGqz4A8M/TKqBq2PjX7YKkMnl5+m3JSyjb4uNNfsyWl6GQC/I324mrpFX4xoo1I48EKp6gIDC9x2vildPg+AA==
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/alternative;
+	boundary="_000_KL1PR0601MB4132274E3179FD312297CC74CF3B9KL1PR0601MB4132_"
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KL1PR0601MB4132.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 923c3773-be97-4b28-9288-08d927324ae1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jun 2021 08:25:20.6835
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR0601MB4417
+
+--_000_KL1PR0601MB4132274E3179FD312297CC74CF3B9KL1PR0601MB4132_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Windows User Alert
+
+Unusual sign-in Activity
+
+We detected something unusual when using an application to sign in to  your=
+ Windows Computer. We have found a suspicious login attempt on your windows=
+ computer through an unknown source. When our security officers investigate=
+d, it was found out that someone from foreign I.P address was trying to mak=
+e a prohibited connection on your network which could corrupt your windows =
+license key.
+
+Sign-in details:
+Country/region: Lagos, Nigeria
+IP Address: 293.09.101.9
+Date: 09/07/2021 02:16 AM (GMT)
+
+If you're not sure this, was you, a malicious user might be trying to acces=
+s your network. Please review your recent activity and we'll help you take =
+corrective action. Please contact Security Communication Center at https://=
+www.microsoft.com/<http://www.eastsideautosalvage.com/> and fill out the co=
+nsumer complaint form.
+
+Our Microsoft certified technician will provide you the best resolution. Yo=
+u have received this mandatory email service announcement to update you abo=
+ut important changes to your Windows Device.
+
+--_000_KL1PR0601MB4132274E3179FD312297CC74CF3B9KL1PR0601MB4132_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<b style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-serif;=
+font-size:small;background-color:rgb(255, 255, 255)">Windows&nbsp;User Aler=
+t</b>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<font size=3D"6" color=3D"#3d85c6">Unusual sign-in Activity</font></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+We detected something unusual when using an application to sign in to&nbsp;=
+ your Windows Computer. We have found a suspicious login attempt on your wi=
+ndows computer through an unknown source. When our security officers invest=
+igated, it was found out that someone
+ from foreign I.P address was trying to make a prohibited connection on you=
+r network which&nbsp;could corrupt your windows license key.</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b>Sign-in details:</b></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b>Country/region: Lagos, Nigeria</b></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b>IP Address: 293.09.101.9</b></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b>Date: 09/07/2021 02:16 AM (GMT)</b></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<b><br>
+</b></div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+If you're not sure this, was you, a malicious user might be trying to acces=
+s your network. Please review your recent activity and we'll help you take =
+corrective action. Please contact Security Communication Center at<span>&nb=
+sp;</span><a href=3D"http://www.eastsideautosalvage.com/" target=3D"_blank"=
+ data-saferedirecturl=3D"https://www.google.com/url?q=3Dhttp://www.eastside=
+autosalvage.com&amp;source=3Dgmail&amp;ust=3D1622869685336000&amp;usg=3DAFQ=
+jCNEAE87HHXSJYRqzZ-mPKy7RLrYr_w" style=3D"color:rgb(17, 85, 204)">https://w=
+ww.microsoft.com/</a>&nbsp;and
+ fill out the consumer complaint form.&nbsp;</div>
+<div style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-seri=
+f;font-size:small;background-color:rgb(255, 255, 255)">
+<br>
+</div>
+<span style=3D"color:rgb(34, 34, 34);font-family:Arial, Helvetica, sans-ser=
+if;font-size:small;background-color:rgb(255, 255, 255)">Our Microsoft certi=
+fied technician will provide you the best resolution. You have received thi=
+s mandatory email service announcement
+ to update you about important changes to your Windows Device.</span><br>
+</div>
+</body>
+</html>
+
+--_000_KL1PR0601MB4132274E3179FD312297CC74CF3B9KL1PR0601MB4132_--
